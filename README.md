@@ -1,9 +1,10 @@
 # Recurrent U-Net for Resource Constraint Segmentation
-
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]
-## Iterative Refinement and Recurrent U-Net for Semantic Segmentation Algorithms Implemented in PyTorch
 
+Iterative refinement recurrent U-Net for Semantic Segmentation in PyTorch
 Here we provide the recurrent UNet implementation, as well as pipeline including training and validation. 
+
+**IMPORTANT** Please download the datasets and modify the `config.json` accordingly. 
 
 **If you find this useful in your research, please consider citing:**
 
