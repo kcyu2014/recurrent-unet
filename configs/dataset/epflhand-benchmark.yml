@@ -1,0 +1,31 @@
+model:
+    arch: rcnn2
+data:
+    dataset: epfl_hand
+    train_split: test
+    val_split: val
+    test_split: train
+    img_rows: 288
+    img_cols: 224
+    path_: /cvlabdata1/cvlab/datasets_hugonot/Logitech-CVLab_dataset_annotations
+    path: /cvlabdata2/home/user/data/Logitech-CVLab_dataset_annotations
+training:
+    train_iters: 11
+    batch_size: 8
+    val_interval: 10
+    n_workers: 12
+    print_interval: 50
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 0.4
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 3600
+        lr_decay_factor_gamma: 0.95
+    resume: rcnn2_epfl_hand_best_model.pkl

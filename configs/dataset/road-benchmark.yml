@@ -1,0 +1,32 @@
+model:
+    arch: rcnn3
+data:
+    dataset: road
+    train_split: train
+    val_split: valid
+    test_split: test
+    void_class: 2
+    img_rows: 1472
+    img_cols: 1472
+    path: /cvlabdata2/home/user/data/toronto
+training:
+    train_iters: 11
+    batch_size: 1
+    validate_batch_size: 1
+    val_interval: 10
+    n_workers: 12
+    print_interval: 50
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 0.4
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 1800
+        lr_decay_factor_gamma: 0.5
+    resume: best.pkl

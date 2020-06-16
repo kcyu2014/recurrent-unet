@@ -1,0 +1,30 @@
+model:
+    arch: rcnn3
+data:
+    dataset: gtea_hand
+    train_split: train
+    val_split: val
+    test_split: test
+    img_rows: 704
+    img_cols: 384
+    path: /cvlabdata2/home/user/data/GTEA
+training:
+    train_iters: 12000
+    batch_size: 8
+    val_interval: 60
+    n_workers: 16
+    print_interval: 5
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 0.4
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 360
+        lr_decay_factor_gamma: 0.95
+    resume: rcnn2_gtea_hand_best_model.pkl

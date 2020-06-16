@@ -1,0 +1,51 @@
+{
+  "ego_hand":
+  {
+    "data_path": "/tmp/home/user/data/egohands_data/"
+  },
+
+  "epfl_hand":
+  {
+    "data_path": "/cvlabdata2/home/user/data/epfl-logitech-CTI/"
+  },
+
+  "pascal":
+  {
+    "data_path": "/cvlabdata2/home/user/data/voc/VOCdevkit/VOC2012"
+  },
+
+  "sbd":
+  {
+    "data_path": "/cvlabdata2/home/user/data/voc/benchmark_RELEASE/"
+  },
+
+  "camvid":
+  {
+    "data_path": "/home/meet/data/CamVid/"
+  },
+  
+  "ade20k":
+  {
+    "data_path": "/home/meet/datasets/ADE20K/"
+  },
+  
+  "mit_sceneparsing_benchmark":
+  {
+    "data_path": "/home/ubuntu/DATA/ADEChallengeData2016/"
+  },
+
+  "nyuv2":
+  {
+    "data_path": "/home/meet/datasets/NYUv2/"
+  },
+
+  "sunrgbd":
+  {
+    "data_path": "/home/meet/datasets/SUNRBGD/"
+  },
+  
+  "cityscapes":
+  {
+    "data_path": "/home/meet/datasets/cityscapes/"
+  }
+}

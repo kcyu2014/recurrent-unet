@@ -1,0 +1,31 @@
+model:
+    arch: rcnn3
+data:
+    dataset: ego_hand
+    train_split: train
+    val_split: val
+    test_split: test
+    img_rows: 1280
+    img_cols: 704
+    path: /cvlabdata2/home/user/data/egohands_data/
+#    path: /home/kyu/.keras/datasets/egohands_data
+training:
+    train_iters: 60000
+    batch_size: 2
+    val_interval: 600
+    n_workers: 4
+    print_interval: 50
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 1.0
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 1800
+        lr_decay_factor_gamma: 0.95
+    resume: rcnn2_ego_hand_best_model.pkl

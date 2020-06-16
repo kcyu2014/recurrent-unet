@@ -1,0 +1,30 @@
+model:
+    arch: runet
+data:
+    dataset: eyth_hand
+    train_split: train
+    val_split: val
+    test_split: test
+    img_rows: 384
+    img_cols: 224
+    path: /cvlabdata2/home/user/data/eyth_dataset
+training:
+    train_iters: 60000
+    batch_size: 8
+    val_interval: 600
+    n_workers: 16
+    print_interval: 30
+    optimizer:
+        name: 'sgd'
+        lr: 5.0e-4
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 0.4
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 1800
+        lr_decay_factor_gamma: 0.95
+    resume: runet_eyth_hand_best_model.pkl

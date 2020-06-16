@@ -1,0 +1,32 @@
+model:
+    arch: rcnn2
+data:
+    dataset: drive
+    train_split: train
+    val_split: test
+    test_split: test
+    img_rows: 576
+    img_cols: 576
+    orig_size: (565,584)
+    path: /cvlabdata2/home/user/data/DRIVE/
+#    path: /home/kyu/.keras/datasets/egohands_data
+training:
+    train_iters: 12000
+    batch_size: 10
+    val_interval: 30
+    n_workers: 20
+    print_interval: 5
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-3
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 1.0
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size: 180
+        lr_decay_factor_gamma: 0.95
+    resume: rcnn2_drive_best_model.pkl

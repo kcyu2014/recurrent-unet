@@ -1,0 +1,40 @@
+model:
+    arch: pspnet
+
+img_rows: 1025
+img_cols: 2049
+resume: pspnet_101_cityscapes.pth
+
+data:
+    dataset: cityscapes
+    train_split: train
+    val_split: val
+    test_split: val
+    img_rows: 'same'
+    img_cols: 'same'
+    path_half: /cvlabdata2/cvlab/dataset_cityscapes_downsampled/
+    path_kris: /cvlabdata1/cvlab/dataset_cityscapes/
+    path: /cvlabdata2/home/user/data/cityscapes/
+training:
+    train_iters: 200000 # 37200
+    batch_size: 16
+    val_interval: 1200 # 1200
+    n_workers: 32
+    print_interval: 1 # 50
+    optimizer:
+        name: 'sgd'
+        lr: 1.0e-8
+        weight_decay: 0.0005
+        momentum: 0.9
+    loss:
+        name: 'multi_step_cross_entropy'
+        reduction: 'sum'
+        scale_weight: 1.0
+    loss_ours:
+        name: 'my_cross_entropy'
+        reduction: 'sum'
+    lr_schedule:
+        name: 'StepLR'
+        lr_decay_step_size:  1800 # 186
+        lr_decay_factor_gamma: 0.95
+    resume: /cvlabdata2/home/user/pycharm/pytorch-semseg/runs/cityscapes/iccvablation/druresnet50_cityscapes-h256-1-r3-w-0.4-gate3-bs-16-fscale-1/34042/druresnet50_cityscapes_best_model.pkl
