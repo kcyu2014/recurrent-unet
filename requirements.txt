@@ -2,7 +2,7 @@ matplotlib
 scipy
 torch==0.4.1
 torchvision==0.2.1
-tqdm==4.11.2
+tqdm==4.66.3
 tensorboardX
 pyyaml
 pydensecrf
