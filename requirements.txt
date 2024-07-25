@@ -1,6 +1,6 @@
 matplotlib
 scipy
-torch==0.4.1
+torch==2.2.0
 torchvision==0.2.1
 tqdm==4.11.2
 tensorboardX
